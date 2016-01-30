@@ -17,9 +17,9 @@ public class ShiftText : MonoBehaviour {
 			cycle = 0;
 
 			StringBuilder text = new StringBuilder("");
-			for (int i=0; i < 512; ++i) {
-				if (i % 32 == 31) text.Append('\n');
-				else if (i == 296) {
+			for (int i=0; i < 528; ++i) {
+				if (i % 33 == 32) text.Append('\n');
+				else if (i == 305) {
 					text.Append("DESPAIR");
 					i += 6;
 				} else {
