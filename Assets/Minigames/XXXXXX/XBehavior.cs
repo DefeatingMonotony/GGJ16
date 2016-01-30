@@ -5,6 +5,8 @@ public class XBehavior : MonoBehaviour {
 	public bool active = false;
 	public Transform next = null;
 
+	private bool destroyed = false;
+
 	// Use this for initialization
 	void Start() {
 	
@@ -19,10 +21,16 @@ public class XBehavior : MonoBehaviour {
 	// Update is called once per frame
 	void Update() {
 		if (active && Input.GetKeyDown(KeyCode.X)) {
+			destroyed = true;
+		}
+	}
+
+	void LateUpdate() {
+		if (destroyed) {
 			if (next != null) {
-				XBehavior nbeh = next.GetComponent<XBehavior> ();
+				XBehavior nbeh = next.GetComponent<XBehavior>();
 				nbeh.active = true;
-				nbeh.ShiftRight ();
+				nbeh.ShiftRight();
 			} else {
 				Debug.Log("Win");
 			}

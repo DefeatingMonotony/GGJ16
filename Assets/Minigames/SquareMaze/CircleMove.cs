@@ -21,9 +21,7 @@ public class CircleMove : MonoBehaviour {
 				float maxX = 3.0f - (state / 4);
 				float minX = -maxX + (((state % 4) == 3) ? 1.0f : 0.0f);
 				float moveX = mousePos.x - transform.position.x;
-				if (Mathf.Abs(moveX) <= mag) {
-					mag = 0.0f;
-				} else {
+				if (Mathf.Abs(moveX) > mag) {
 					moveX = mag * Mathf.Sign(moveX);
 				}
 				float posX = transform.position.x + moveX;
@@ -59,9 +57,7 @@ public class CircleMove : MonoBehaviour {
 				float maxY = 3.0f - (state / 4);
 				float minY = -maxY - (((state % 4) == 0 && state != 0) ? 1.0f : 0.0f);
 				float moveY = mousePos.y - transform.position.y;
-				if (Mathf.Abs(moveY) <= mag) {
-					mag = 0.0f;
-				} else {
+				if (Mathf.Abs(moveY) > mag) {
 					moveY = mag * Mathf.Sign(moveY);
 				}
 				float posY = transform.position.y + moveY;
