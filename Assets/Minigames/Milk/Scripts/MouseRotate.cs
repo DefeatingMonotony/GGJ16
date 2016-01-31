@@ -4,7 +4,7 @@ using System.Collections;
 public class MouseRotate : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
-		Title.ChangeTitle("Hydrate");
+		Title.ChangeTitle("Don't cry");
 	}
 	
 	// Update is called once per frame
