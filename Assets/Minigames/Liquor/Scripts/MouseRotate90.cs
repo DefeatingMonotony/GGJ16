@@ -2,6 +2,8 @@
 using System.Collections;
 
 public class MouseRotate90 : MonoBehaviour {
+	public float speed = 0.04f;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -18,6 +20,6 @@ public class MouseRotate90 : MonoBehaviour {
 		diff.Normalize();
 		
 		float rot_z = Mathf.Atan2(diff.y,diff.x) * Mathf.Rad2Deg;
-		transform.parent.rotation = Quaternion.Lerp(transform.parent.rotation,Quaternion.Euler(0f,0f,rot_z-90),.01f);
+		transform.parent.rotation = Quaternion.Lerp(transform.parent.rotation,Quaternion.Euler(0f,0f,rot_z-90),speed);
 	}
 }
