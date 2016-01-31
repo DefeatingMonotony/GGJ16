@@ -13,7 +13,6 @@ public class MouseDrag : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(scoring && held){
-			//Debug.Log("Testing");
 			score -= (Mathf.Abs(Input.GetAxis("Mouse X")) + Mathf.Abs(Input.GetAxis("Mouse Y")));
 			if(score<=0){
 				Timer.Win();
