@@ -13,4 +13,8 @@ public class Title : MonoBehaviour {
 		frontText.text = title;
 		backText.text = title;
 	}
+
+	public void StartGame() {
+		GameObject.FindObjectOfType<Timer>().StartTimer();
+	}
 }

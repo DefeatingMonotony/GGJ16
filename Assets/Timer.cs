@@ -15,7 +15,7 @@ public class Timer : MonoBehaviour {
 
 	// Use this for initialization
 	void Awake () {
-		if (GameObject.FindObjectsOfType<Timer>().Length != 1) Destroy(gameObject);
+		if (GameObject.FindObjectOfType<Timer>() != this) Destroy(gameObject);
 		else {
 			DontDestroyOnLoad(transform.gameObject);
 			timeRemaining = seconds;
