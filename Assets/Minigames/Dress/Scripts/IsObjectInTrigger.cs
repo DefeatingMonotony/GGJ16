@@ -15,8 +15,11 @@ public class IsObjectInTrigger : MonoBehaviour {
 	}
 	
 	void OnTriggerEnter2D(Collider2D col){
-		
 		if(col.gameObject == target){
+			Destroy(transform.parent.GetComponent<MouseDrag>());
+			Vector3 move = target.GetComponent<BoxCollider2D>().bounds.center - GetComponent<BoxCollider2D>().bounds.center;
+			move.z = 0.0f;
+			transform.parent.position += move;
 			result = true;
 			Timer.Win();
 		}
