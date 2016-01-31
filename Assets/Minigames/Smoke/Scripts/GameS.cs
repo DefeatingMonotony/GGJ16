@@ -26,7 +26,7 @@ public class GameS : MonoBehaviour {
 				curCig = Instantiate (Cig);
 			}
 		}
-		if (ActiveFace.GetComponent<Face> ().Finishing == true) 
+		if (ActiveFace.GetComponent<Face> ().Finishing == true && !win) 
 		{
 			curCig.GetComponent<Cig> ().boom = true;
 			HasCig = false;
