@@ -30,8 +30,8 @@ public class Timer : MonoBehaviour {
 		timeRemaining = seconds;
 		run = true;
 		active = true;
-
 		SceneManager.LoadScene(level = 2);
+		GetComponent<AudioScript>().Play();
 	}
 	
 	// Update is called once per frame
@@ -43,8 +43,8 @@ public class Timer : MonoBehaviour {
 				SceneManager.LoadScene(1);
 				run = false;
 				timeRemaining = seconds;
+				GetComponent<AudioScript>().Stop();
 			}
-
 			Camera.main.backgroundColor = Color.Lerp(beginColor,endColor,(float)(SceneManager.GetActiveScene().buildIndex) / (float)(SceneManager.sceneCountInBuildSettings));
 			currColor = Camera.main.backgroundColor;
 			time = string.Format("{2}{0}:{1:D2}", Math.Abs((int) ((timeRemaining + 1.0f) / 60.0f)), Math.Abs(Mathf.CeilToInt(timeRemaining) % 60), 

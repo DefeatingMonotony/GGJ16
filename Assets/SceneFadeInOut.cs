@@ -53,6 +53,7 @@ public class SceneFadeInOut : MonoBehaviour
 		Color c = GetComponent<GUITexture>().color;
 		c.a = 1.0f - Mathf.Sqrt(Mathf.Clamp(fade, 0.0f, 1.0f));
 		GetComponent<GUITexture>().color = c;
+		AudioScript.FadeOut();
 		if(fade <= 0.0f)
 			SceneManager.LoadScene(level);
 	}
