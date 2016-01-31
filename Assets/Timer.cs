@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using System;
 using System.Collections;
 
 public class Timer : MonoBehaviour {
@@ -44,7 +45,8 @@ public class Timer : MonoBehaviour {
 			}
 			Camera.main.backgroundColor = Color.Lerp(beginColor,endColor,(float)(SceneManager.GetActiveScene().buildIndex) / (float)(SceneManager.sceneCountInBuildSettings));
 
-			time = string.Format("{0}:{1:D2}", (int) ((timeRemaining + 1.0f) / 60.0f), Mathf.CeilToInt(timeRemaining) % 60);
+			time = string.Format("{2}{0}:{1:D2}", Math.Abs((int) ((timeRemaining + 1.0f) / 60.0f)), Math.Abs(Mathf.CeilToInt(timeRemaining) % 60), 
+				(timeRemaining <= 1.0f) ? "-" : "");
 		} else {
 			time = "";
 		}
