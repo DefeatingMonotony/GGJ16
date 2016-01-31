@@ -42,6 +42,8 @@ public class Timer : MonoBehaviour {
 			if (active && timeRemaining <= 0.0f) {
 				SceneManager.LoadScene(1);
 				run = false;
+				if (won) ++level;
+				won = false;
 				timeRemaining = seconds;
 				GetComponent<AudioScript>().Stop();
 			}
