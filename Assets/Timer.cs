@@ -3,10 +3,12 @@ using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class Timer : MonoBehaviour {
-	public static int level = 0;
+	public int level = 0;
 	public float seconds = 60.0f;
 	private float timeRemaining;
+	private bool won = false;
 	public bool run = false;
+	public Transform winPrefab;
 
 	// Use this for initialization
 	void Awake () {
@@ -41,13 +43,25 @@ public class Timer : MonoBehaviour {
 
 		TextMesh mesh = transform.GetComponent<TextMesh>();
 		mesh.text = time;
+		transform.position = new Vector3(Camera.main.orthographicSize * Camera.main.aspect - 0.2f, Camera.main.orthographicSize, 0.0f);
 	}
 
-	public static void Win(){
-		if(level + 1 < SceneManager.sceneCountInBuildSettings){
-			SceneManager.LoadScene(++level);
+	public static void Next() {
+		Timer timer = GameObject.FindObjectOfType<Timer>();
+		if(timer.level + 1 < SceneManager.sceneCountInBuildSettings){
+			timer.won = false;
+			SceneManager.LoadScene(++timer.level);
 		}else{
 			Debug.Log("no more levels");
+			timer.run = false;
+		}
+	}
+
+	public static void Win() {
+		Timer timer = GameObject.FindObjectOfType<Timer>();
+		if (!timer.won) {
+			timer.won = true;
+			Instantiate(timer.winPrefab);
 		}
 	}
 }

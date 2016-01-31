@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Scoring : MonoBehaviour {
 
-	public int score = 200;
+	public float time = 2.0f;
 	public bool isTriggered = false;
 	// Use this for initialization
 	void Start () {
@@ -13,9 +13,9 @@ public class Scoring : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(!isTriggered){
-			score--;
+			time -= Time.deltaTime;
 		}
-		if(score<=0){
+		if(time<=0.0f){
 			Timer.Win();
 		}
 	}
