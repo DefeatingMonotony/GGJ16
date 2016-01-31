@@ -30,6 +30,7 @@ public class Timer : MonoBehaviour {
 		timeRemaining = seconds;
 		run = true;
 		active = true;
+		won = false;
 		SceneManager.LoadScene(level = 2);
 		GetComponent<AudioScript>().Play();
 	}
@@ -43,7 +44,6 @@ public class Timer : MonoBehaviour {
 				SceneManager.LoadScene(1);
 				run = false;
 				if (won) ++level;
-				won = false;
 			}
 			Camera.main.backgroundColor = Color.Lerp(beginColor,endColor,(float)(SceneManager.GetActiveScene().buildIndex) / (float)(SceneManager.sceneCountInBuildSettings));
 			currColor = Camera.main.backgroundColor;
