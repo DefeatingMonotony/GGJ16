@@ -20,7 +20,7 @@ public class XBehavior : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update() {
-		if (active && Input.GetKeyDown(KeyCode.X)) {
+		if (active && Input.anyKeyDown) {
 			destroyed = true;
 		}
 	}
