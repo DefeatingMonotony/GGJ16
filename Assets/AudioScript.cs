@@ -26,6 +26,7 @@ public class AudioScript : MonoBehaviour {
 	
 	public void Play(){
 		GetComponent<AudioSource>().Play();
+		GetComponent<AudioSource>().volume=1f;
 		Debug.Log("play hit");
 	}
 	
