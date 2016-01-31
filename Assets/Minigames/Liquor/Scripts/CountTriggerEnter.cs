@@ -15,6 +15,7 @@ public class CountTriggerEnter : MonoBehaviour {
 	void Update () {
 		if(triggerCount >= goalNum){
 			Debug.Log("win");
+			Timer.Win();
 		}
 	}
 	

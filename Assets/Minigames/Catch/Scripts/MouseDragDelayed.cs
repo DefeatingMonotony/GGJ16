@@ -9,7 +9,7 @@ public class MouseDragDelayed : MonoBehaviour {
 		newPos = transform.position;
 	}
 
-	void Update() {
+	void FixedUpdate() { 
 		GetComponent<Rigidbody2D>().MovePosition(Vector2.Lerp(transform.position,newPos,speed * Time.deltaTime));
 	}
 	

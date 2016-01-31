@@ -19,6 +19,7 @@ public class TriggerDestroy : MonoBehaviour {
 		destroyed++;
 		if(destroyed >= destroyGoal){
 			Debug.Log("win");
+			Timer.Win();
 		}
 	}
 }

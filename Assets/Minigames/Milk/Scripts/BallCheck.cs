@@ -8,6 +8,7 @@ public class BallCheck : MonoBehaviour {
 	void Update(){
 		if(balls<=0){
 			Debug.Log("winnar");
+			Timer.Win();
 		}
 	}
 

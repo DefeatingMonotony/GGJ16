@@ -19,6 +19,7 @@ public class IsObjectInTrigger : MonoBehaviour {
 		if(col.gameObject == target){
 			result = true;
 			Debug.Log("Win");
+			Timer.Win();
 		}
 	}
 }
