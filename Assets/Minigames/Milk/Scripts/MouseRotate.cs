@@ -18,6 +18,8 @@ public class MouseRotate : MonoBehaviour {
 		diff.Normalize();
 		
 		float rot_z = Mathf.Atan2(diff.y,diff.x) * Mathf.Rad2Deg;
+		Debug.Log(rot_z);
+		rot_z=Mathf.Clamp(rot_z,0,90);
 		transform.parent.rotation = Quaternion.Euler(0f,0f,rot_z);
 	}
 }

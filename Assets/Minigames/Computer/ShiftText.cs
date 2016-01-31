@@ -8,6 +8,7 @@ public class ShiftText : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		Title.ChangeTitle("Love your job!");
 		cycle = framesPerCycle;
 	}
 	

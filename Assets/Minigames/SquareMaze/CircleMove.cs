@@ -7,7 +7,7 @@ public class CircleMove : MonoBehaviour {
 
 	// Use this for initialization
 	void Start() {
-
+		Title.ChangeTitle("Descend into madness");
 	}
 
 	void FixedUpdate() {
