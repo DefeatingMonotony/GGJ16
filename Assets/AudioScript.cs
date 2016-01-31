@@ -12,6 +12,7 @@ public class AudioScript : MonoBehaviour {
 	}
 	
 	public void FadeIn(){
+		GetComponent<AudioSource>().Stop();
 		GetComponent<AudioSource>().Play();
 		GetComponent<AudioSource>().volume = 0f;
 		fadeIn = true;
@@ -22,6 +23,7 @@ public class AudioScript : MonoBehaviour {
 	}
 	
 	public void Play(){
+		GetComponent<AudioSource>().Stop();
 		GetComponent<AudioSource>().Play();
 		GetComponent<AudioSource>().volume=1f;
 	}

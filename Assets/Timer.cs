@@ -44,7 +44,6 @@ public class Timer : MonoBehaviour {
 				run = false;
 				if (won) ++level;
 				won = false;
-				timeRemaining = seconds;
 			}
 			Camera.main.backgroundColor = Color.Lerp(beginColor,endColor,(float)(SceneManager.GetActiveScene().buildIndex) / (float)(SceneManager.sceneCountInBuildSettings));
 			currColor = Camera.main.backgroundColor;
