@@ -9,6 +9,7 @@ public class FlowerScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		overlapping = false;
+		GameObject.FindObjectOfType<Timer>().run = false;
 	}
 	
 	// Update is called once per frame
