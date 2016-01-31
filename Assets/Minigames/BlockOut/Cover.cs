@@ -13,7 +13,7 @@ public class Cover : MonoBehaviour {
 	void Update () {
 		Bounds b = GetComponent<BoxCollider2D>().bounds;
 		if (xmin <= b.min.x && xmax >= b.max.x && ymin <= b.min.y && ymax >= b.max.y) {
-			Debug.Log("Winner");
+			Timer.Win();
 		}
 	}
 

@@ -21,7 +21,6 @@ public class TriggerDestroyOverTime : MonoBehaviour {
 			Destroy(col.gameObject);
 			destroyed++;
 			if(destroyed >= destroyGoal){
-				Debug.Log("win");
 				Timer.Win();
 			}
 		}

@@ -14,7 +14,6 @@ public class CountTriggerEnter : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(triggerCount >= goalNum){
-			Debug.Log("win");
 			Timer.Win();
 		}
 	}

@@ -12,7 +12,7 @@ public class TriggerInsert : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (papers >= 3) {
-			Debug.Log("Win");
+			Timer.Win();
 		}
 	}
 

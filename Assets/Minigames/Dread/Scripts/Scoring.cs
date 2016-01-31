@@ -16,7 +16,6 @@ public class Scoring : MonoBehaviour {
 			score--;
 		}
 		if(score<=0){
-			Debug.Log("win");
 			Timer.Win();
 		}
 	}

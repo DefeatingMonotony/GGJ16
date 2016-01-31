@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class Timer : MonoBehaviour {
-	public static int level = 1;
+	public static int level = 0;
 	public float seconds = 60.0f;
 	private float timeRemaining;
 	public bool run = false;
@@ -19,7 +20,7 @@ public class Timer : MonoBehaviour {
 		timeRemaining = seconds;
 		run = true;
 
-		Application.LoadLevel(1);
+		SceneManager.LoadScene(level = 1);
 	}
 	
 	// Update is called once per frame
@@ -41,10 +42,10 @@ public class Timer : MonoBehaviour {
 		TextMesh mesh = transform.GetComponent<TextMesh>();
 		mesh.text = time;
 	}
-	
+
 	public static void Win(){
-		if(Application.loadedLevel + 1 < Application.levelCount){
-			Application.LoadLevel(Application.loadedLevel + 1);
+		if(level + 1 < SceneManager.sceneCountInBuildSettings){
+			SceneManager.LoadScene(++level);
 		}else{
 			Debug.Log("no more levels");
 		}

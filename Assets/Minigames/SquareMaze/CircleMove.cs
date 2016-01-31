@@ -92,6 +92,6 @@ public class CircleMove : MonoBehaviour {
 				}
 			}
 		}
-		if (state == 13) Debug.Log("Winner");
+		if (state == 13) Timer.Win();
 	}
 }

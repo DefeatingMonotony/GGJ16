@@ -15,7 +15,6 @@ public class CollideSnap : MonoBehaviour {
 		if(snapped){
 			score -= (Mathf.Abs(Input.GetAxis("Mouse X")) + Mathf.Abs(Input.GetAxis("Mouse Y")));
 			if(score<=0){
-				Debug.Log("You win");
 				Timer.Win();
 			}
 		}
