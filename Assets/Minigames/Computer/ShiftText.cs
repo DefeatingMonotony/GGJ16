@@ -3,7 +3,7 @@ using System.Collections;
 using System.Text;
 
 public class ShiftText : MonoBehaviour {
-	public int framesPerCycle = 6;
+	public int framesPerCycle = 5;
 	private int cycle;
 
 	// Use this for initialization
