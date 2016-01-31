@@ -10,9 +10,10 @@ public class KeyRotate : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 		if(Input.GetAxis("Horizontal")>0){
-			transform.rotation = Quaternion.RotateTowards(transform.rotation,Quaternion.Euler(0,0,0), speed * Time.deltaTime);
+			transform.GetComponent<Rigidbody2D>().rotation = Mathf.Max(
+				transform.GetComponent<Rigidbody2D>().rotation - speed * Time.deltaTime, 0.0f);
 		}
 	}
 }
