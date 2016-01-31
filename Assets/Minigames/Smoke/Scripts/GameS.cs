@@ -28,7 +28,7 @@ public class GameS : MonoBehaviour {
 		}
 		if (ActiveFace.GetComponent<Face> ().Finishing == true && !win) 
 		{
-			curCig.GetComponent<Cig> ().boom = true;
+			Destroy(curCig);
 			HasCig = false;
 			Faces.RemoveAt (AF);
 			if (Faces.Count > 0) {
