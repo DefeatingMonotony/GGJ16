@@ -6,7 +6,7 @@ public class KeyRotate : MonoBehaviour {
 	
 	public float speed;
 	void Start () {
-		Title.ChangeTitle("Flavor your coffee");
+
 	}
 	
 	// Update is called once per frame

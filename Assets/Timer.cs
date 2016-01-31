@@ -65,7 +65,6 @@ public class Timer : MonoBehaviour {
 		if (!timer.won) {
 			timer.won = true;
 			Instantiate(timer.winPrefab);
-			Title.ChangeTitle("");
 		}
 	}
 }

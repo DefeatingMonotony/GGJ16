@@ -9,8 +9,8 @@ public class MouseRotate90 : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		mouseValid = false;
-		Title.ChangeTitle("Drown your sorrows");
-	}
+
+		}
 	
 	// Update is called once per frame
 	void FixedUpdate () {

@@ -7,7 +7,6 @@ public class MouseDragDelayed : MonoBehaviour {
 
 	void Start() {
 		newPos = transform.position;
-		Title.ChangeTitle("Leaky Pipe");
 	}
 
 	void FixedUpdate() { 

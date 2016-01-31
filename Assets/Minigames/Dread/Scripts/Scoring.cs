@@ -7,7 +7,6 @@ public class Scoring : MonoBehaviour {
 	public bool isTriggered = false;
 	// Use this for initialization
 	void Start () {
-		Title.ChangeTitle("Don't let it in");
 	}
 	
 	// Update is called once per frame

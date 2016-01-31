@@ -9,7 +9,7 @@ public class XBehavior : MonoBehaviour {
 
 	// Use this for initialization
 	void Start() {
-		Title.ChangeTitle("Enter your password");
+
 	}
 
 	void ShiftRight() {

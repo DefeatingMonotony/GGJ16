@@ -6,7 +6,7 @@ public class TriggerInsert : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		Title.ChangeTitle("Be Productive");
+
 	}
 	
 	// Update is called once per frame

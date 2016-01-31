@@ -18,8 +18,8 @@ public class FollowMouse : MonoBehaviour {
 		spring.enabled = true;
 		spring.connectedAnchor = Camera.main.ScreenToWorldPoint (Input.mousePosition);
 		spring.anchor = transform.InverseTransformPoint (spring.connectedAnchor);
-		Title.ChangeTitle("You'll never be clean");
-	}
+
+		}
 	
 	void FixedUpdate(){
 		if (spring.enabled == true) 
