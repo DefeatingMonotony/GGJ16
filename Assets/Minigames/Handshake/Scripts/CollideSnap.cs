@@ -7,7 +7,7 @@ public class CollideSnap : MonoBehaviour {
 	public float score = 100;
 	// Use this for initialization
 	void Start () {
-	
+		Title.ChangeTitle("Meet someone new");
 	}
 	
 	// Update is called once per frame
