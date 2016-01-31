@@ -16,7 +16,7 @@ public class WinScript : MonoBehaviour {
 		time += Time.deltaTime * 1.5f;
 		float scale = Mathf.Clamp(time, 0.0f, 1.0f);
 		transform.localScale = new Vector3(scale, scale, 1.0f);
-		if (!nexted && time >= 2.0f) {
+		if (!nexted && time >= 1.5f) {
 			Timer.Next();
 			nexted = true;
 		}
