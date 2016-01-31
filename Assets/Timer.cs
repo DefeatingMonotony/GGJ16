@@ -48,7 +48,7 @@ public class Timer : MonoBehaviour {
 			Camera.main.backgroundColor = Color.Lerp(beginColor,endColor,(float)(SceneManager.GetActiveScene().buildIndex) / (float)(SceneManager.sceneCountInBuildSettings));
 			currColor = Camera.main.backgroundColor;
 			time = string.Format("{2}{0}:{1:D2}", Math.Abs((int) ((timeRemaining + 1.0f) / 60.0f)), Math.Abs(Mathf.CeilToInt(timeRemaining) % 60), 
-				(timeRemaining <= 0.0f) ? "-" : "");
+				(timeRemaining <= -1.0f) ? "-" : "");
 		} else {
 			time = "";
 		}

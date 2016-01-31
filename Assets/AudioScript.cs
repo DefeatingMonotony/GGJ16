@@ -3,11 +3,11 @@ using System.Collections;
 
 public class AudioScript : MonoBehaviour {
 
-	public static bool fadeOut;
+	public bool fadeOut;
 	public bool fadeIn;
 	public float fadeSpeed = 0.1f;
 	
-	public static void FadeOut(){
+	public void FadeOut(){
 		fadeOut = true;
 		Debug.Log("fadeOut hit");
 	}

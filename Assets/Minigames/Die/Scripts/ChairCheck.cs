@@ -5,6 +5,10 @@ public class ChairCheck : MonoBehaviour {
 	public float wait = 3.0f;
 	private bool off = false;
 	private float timer = float.NaN;
+
+	void Start() {
+		GameObject.Find("Timer").GetComponent<AudioScript>().FadeOut();
+	}
 	
 	void Update(){
 		if (!float.IsNaN(timer)) {
