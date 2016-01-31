@@ -9,25 +9,21 @@ public class AudioScript : MonoBehaviour {
 	
 	public void FadeOut(){
 		fadeOut = true;
-		Debug.Log("fadeOut hit");
 	}
 	
 	public void FadeIn(){
 		GetComponent<AudioSource>().Play();
 		GetComponent<AudioSource>().volume = 0f;
 		fadeIn = true;
-		Debug.Log("fadeIn hit");
 	}
 	
 	public void Stop(){
 		GetComponent<AudioSource>().Stop();
-		Debug.Log("stop hit");
 	}
 	
 	public void Play(){
 		GetComponent<AudioSource>().Play();
 		GetComponent<AudioSource>().volume=1f;
-		Debug.Log("play hit");
 	}
 	
 	// Update is called once per frame

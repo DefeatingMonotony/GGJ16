@@ -45,7 +45,6 @@ public class Timer : MonoBehaviour {
 				if (won) ++level;
 				won = false;
 				timeRemaining = seconds;
-				GetComponent<AudioScript>().Stop();
 			}
 			Camera.main.backgroundColor = Color.Lerp(beginColor,endColor,(float)(SceneManager.GetActiveScene().buildIndex) / (float)(SceneManager.sceneCountInBuildSettings));
 			currColor = Camera.main.backgroundColor;
