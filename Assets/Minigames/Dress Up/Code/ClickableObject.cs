@@ -10,7 +10,7 @@ public class ClickableObject : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void LateUpdate () {
 		if (Clicked) {
 			Clicked = false;
 		}
