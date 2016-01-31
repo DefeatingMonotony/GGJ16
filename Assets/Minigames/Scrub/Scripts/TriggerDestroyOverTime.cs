@@ -17,11 +17,13 @@ public class TriggerDestroyOverTime : MonoBehaviour {
 	}
 	
 	void OnTriggerEnter2D(Collider2D col){
-		Destroy(col.gameObject);
-		destroyed++;
-		if(destroyed >= destroyGoal){
-			Debug.Log("win");
-			Timer.Win();
+		if(col.gameObject.name != "Wall"){
+			Destroy(col.gameObject);
+			destroyed++;
+			if(destroyed >= destroyGoal){
+				Debug.Log("win");
+				Timer.Win();
+			}
 		}
 	}
 }
