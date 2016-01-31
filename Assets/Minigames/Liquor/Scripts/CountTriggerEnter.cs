@@ -21,4 +21,8 @@ public class CountTriggerEnter : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D col){
 		triggerCount++;
 	}
+	
+	void OnTriggerExit2D(Collider2D col){
+		triggerCount--;
+	}
 }
