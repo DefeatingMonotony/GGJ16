@@ -37,6 +37,7 @@ public class GameS : MonoBehaviour {
 				ActiveFace = Faces [AF];
 			} else if (Faces.Count == 0) {
 				win = true;
+				Timer.Win ();
 			}
 		}
 		//
