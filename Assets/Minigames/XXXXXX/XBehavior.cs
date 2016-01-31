@@ -9,7 +9,7 @@ public class XBehavior : MonoBehaviour {
 
 	// Use this for initialization
 	void Start() {
-	
+		Title.ChangeTitle("Press X To Not Die");
 	}
 
 	void ShiftRight() {
