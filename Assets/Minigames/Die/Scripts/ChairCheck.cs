@@ -8,6 +8,7 @@ public class ChairCheck : MonoBehaviour {
 
 	void Start() {
 		GameObject.Find("Timer").GetComponent<AudioScript>().FadeOut();
+		GameObject.FindObjectOfType<Timer>().active = false;
 	}
 	
 	void Update(){
@@ -26,6 +27,5 @@ public class ChairCheck : MonoBehaviour {
 
 	void OnTriggerExit2D(Collider2D col){
 		off = true;
-		GameObject.FindObjectOfType<Timer>().active = false;
 	}
 }
