@@ -33,6 +33,7 @@ public class XBehavior : MonoBehaviour {
 				nbeh.ShiftRight();
 			} else {
 				Debug.Log("Win");
+				Timer.Win();
 			}
 			Destroy(gameObject);
 		}

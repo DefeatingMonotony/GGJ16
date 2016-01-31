@@ -2,6 +2,7 @@
 using System.Collections;
 
 public class Timer : MonoBehaviour {
+	public static int level = 1;
 	public float seconds = 60.0f;
 	private float timeRemaining;
 	public bool run = false;
@@ -39,5 +40,13 @@ public class Timer : MonoBehaviour {
 
 		TextMesh mesh = transform.GetComponent<TextMesh>();
 		mesh.text = time;
+	}
+	
+	public static void Win(){
+		if(Application.loadedLevel + 1 < Application.levelCount){
+			Application.LoadLevel(Application.loadedLevel + 1);
+		}else{
+			Debug.Log("no more levels");
+		}
 	}
 }
