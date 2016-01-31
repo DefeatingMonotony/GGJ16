@@ -9,6 +9,8 @@ public class Timer : MonoBehaviour {
 	private bool won = false;
 	public bool run = false;
 	public Transform winPrefab;
+	public Color beginColor;
+	public Color endColor;
 
 	// Use this for initialization
 	void Awake () {
@@ -38,6 +40,7 @@ public class Timer : MonoBehaviour {
 				run = false;
 				timeRemaining = seconds;
 			}
+			Camera.main.backgroundColor = Color.Lerp(beginColor,endColor,(float)(SceneManager.GetActiveScene().buildIndex) / (float)(SceneManager.sceneCountInBuildSettings));
 
 			time = string.Format("{0}:{1:D2}", (int) ((timeRemaining + 1.0f) / 60.0f), Mathf.CeilToInt(timeRemaining % 60.0f) % 60);
 		} else {
