@@ -8,6 +8,7 @@ public class Timer : MonoBehaviour {
 	private float timeRemaining;
 	private bool won = false;
 	public bool run = false;
+	public bool active = true;
 	public Transform winPrefab;
 	public Color beginColor;
 	public Color endColor;
@@ -26,6 +27,7 @@ public class Timer : MonoBehaviour {
 	public void StartTimer () {
 		timeRemaining = seconds;
 		run = true;
+		active = true;
 
 		SceneManager.LoadScene(level = 2);
 	}
@@ -35,14 +37,14 @@ public class Timer : MonoBehaviour {
 		string time;
 		if (run) {
 			timeRemaining -= Time.deltaTime;
-			if (timeRemaining <= 0.0f) {
+			if (active && timeRemaining <= 0.0f) {
 				SceneManager.LoadScene(1);
 				run = false;
 				timeRemaining = seconds;
 			}
 			Camera.main.backgroundColor = Color.Lerp(beginColor,endColor,(float)(SceneManager.GetActiveScene().buildIndex) / (float)(SceneManager.sceneCountInBuildSettings));
 
-			time = string.Format("{0}:{1:D2}", (int) ((timeRemaining + 1.0f) / 60.0f), Mathf.CeilToInt(timeRemaining % 60.0f) % 60);
+			time = string.Format("{0}:{1:D2}", (int) ((timeRemaining + 1.0f) / 60.0f), Mathf.CeilToInt(timeRemaining) % 60);
 		} else {
 			time = "";
 		}
