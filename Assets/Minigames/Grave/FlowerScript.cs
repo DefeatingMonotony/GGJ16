@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class FlowerScript : MonoBehaviour {
-	private bool overlapping;
+	private bool overlapping = false;
 	private float time = float.NaN;
 	public float wait = 2.0f;
 
