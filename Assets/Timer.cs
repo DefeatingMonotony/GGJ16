@@ -13,6 +13,7 @@ public class Timer : MonoBehaviour {
 	public Transform winPrefab;
 	public Color beginColor;
 	public Color endColor;
+	public static Color currColor;
 
 	// Use this for initialization
 	void Awake () {
@@ -43,8 +44,9 @@ public class Timer : MonoBehaviour {
 				run = false;
 				timeRemaining = seconds;
 			}
-			Camera.main.backgroundColor = Color.Lerp(beginColor,endColor,(float)(SceneManager.GetActiveScene().buildIndex) / (float)(SceneManager.sceneCountInBuildSettings));
 
+			Camera.main.backgroundColor = Color.Lerp(beginColor,endColor,(float)(SceneManager.GetActiveScene().buildIndex) / (float)(SceneManager.sceneCountInBuildSettings));
+			currColor = Camera.main.backgroundColor;
 			time = string.Format("{2}{0}:{1:D2}", Math.Abs((int) ((timeRemaining + 1.0f) / 60.0f)), Math.Abs(Mathf.CeilToInt(timeRemaining) % 60), 
 				(timeRemaining <= 0.0f) ? "-" : "");
 		} else {
