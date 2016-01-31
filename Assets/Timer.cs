@@ -12,17 +12,20 @@ public class Timer : MonoBehaviour {
 
 	// Use this for initialization
 	void Awake () {
-		DontDestroyOnLoad(transform.gameObject);
-		timeRemaining = seconds;
+		if (GameObject.FindObjectsOfType<Timer>().Length != 1) Destroy(gameObject);
+		else {
+			DontDestroyOnLoad(transform.gameObject);
+			timeRemaining = seconds;
 
-		transform.position = new Vector3(Camera.main.orthographicSize * Camera.main.aspect - 0.2f, Camera.main.orthographicSize, 0.0f);
+			transform.position = new Vector3(Camera.main.orthographicSize * Camera.main.aspect - 0.2f, Camera.main.orthographicSize, 0.0f);
+		}
 	}
 
 	public void StartTimer () {
 		timeRemaining = seconds;
 		run = true;
 
-		SceneManager.LoadScene(level = 1);
+		SceneManager.LoadScene(level = 2);
 	}
 	
 	// Update is called once per frame
@@ -31,7 +34,7 @@ public class Timer : MonoBehaviour {
 		if (run) {
 			timeRemaining -= Time.deltaTime;
 			if (timeRemaining <= 0.0f) {
-				Debug.Log("Out Of Time");
+				SceneManager.LoadScene(1);
 				run = false;
 				timeRemaining = seconds;
 			}
