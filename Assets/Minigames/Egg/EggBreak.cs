@@ -19,9 +19,13 @@ public class EggBreak : MonoBehaviour {
 		
 		bot.AddComponent<Rigidbody2D>();
 		bot.GetComponent<Rigidbody2D>().interpolation = RigidbodyInterpolation2D.Interpolate;
+		bot.GetComponent<Rigidbody2D>().collisionDetectionMode = CollisionDetectionMode2D.Continuous;
 		top.AddComponent<Rigidbody2D>();
 		top.GetComponent<Rigidbody2D>().interpolation = RigidbodyInterpolation2D.Interpolate;
+		top.GetComponent<Rigidbody2D>().collisionDetectionMode = CollisionDetectionMode2D.Continuous;
 		yolk.AddComponent<Rigidbody2D>();
+		yolk.GetComponent<Rigidbody2D>().interpolation = RigidbodyInterpolation2D.Interpolate;
+		yolk.GetComponent<Rigidbody2D>().collisionDetectionMode = CollisionDetectionMode2D.Continuous;
 		
 		Timer.Win();
 	}
